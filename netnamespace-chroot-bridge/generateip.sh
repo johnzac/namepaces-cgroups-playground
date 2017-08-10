@@ -8,7 +8,6 @@ if($a == 255){$a=0}else{$a++;break;};a--;
 }'`
 echo $ip > file
 hostPart=`echo $ip  | sed 's/  */\./g'`
-echo $hostPart
 allotedIp=$networkPart"."$hostPart
 echo $allotedIp
 

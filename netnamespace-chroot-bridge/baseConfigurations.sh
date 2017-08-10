@@ -10,6 +10,7 @@ nwPart=`echo $ipAddressBlock | grep -oP "^(\d{1,3}\.){$regExBytes}\d{1,2}"`
 echo "networkPart=$nwPart" >> config.sh
 bridgeIp=`echo $ipAddressBlock | grep -oP '.*?(?=/)'`
 echo "bridgeIp=$bridgeIp" >> config.sh
+echo "netmask=$mask" >> config.sh
 bytes=0
 startingHostPart=
 endVal=$(( $relBytes + 1 ))
