@@ -26,7 +26,7 @@ ip netns exec $namespaceName ip addr add "$allottedIp/$netmask" dev $vethNamespa
 ip netns exec $namespaceName ip link set  $vethNamespaceName up
 brctl addif $bridgeName $vethGlobalName
 ip link set  $vethGlobalName up
-sudo nohup unshare -f -p -n  ip netns exec $namespaceName chroot /home/ubuntu/rootfs '/launchnginx.sh' &
+nohup unshare  -p -n  ip netns exec $namespaceName chroot /home/vagrant/rootfs '/launchnginx.sh' &
 disown
 echo "Container private ip : $allottedIp"
 

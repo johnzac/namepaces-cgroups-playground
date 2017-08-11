@@ -6,7 +6,7 @@ relBytes=$(( $mask / 8 ))
 regExBytes=$(( $relBytes - 1 ))
 nwPartBytes=$(( 4 - $relBytes ))
 nwPartBytesRegex=$(( $nwPartBytes - 1 ))
-nwPart=`echo $ipAddressBlock | grep -oP "^(\d{1,3}\.){$regExBytes}\d{1,2}"`
+nwPart=`echo $ipAddressBlock | grep -oP "^(\d{1,3}\.){$regExBytes}\d{1,3}"`
 echo "networkPart=$nwPart" >> config.sh
 bridgeIp=`echo $ipAddressBlock | grep -oP '.*?(?=/)'`
 echo "bridgeIp=$bridgeIp" >> config.sh
