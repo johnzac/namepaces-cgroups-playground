@@ -16,4 +16,5 @@ cgset -r cpu.cfs_period_us=$defaultCFSPeriod $cgroupName
 cgset -r cpu.cfs_quota_us=$cfsQuota $cgroupName
 cgroupSuffix=$(( $cgroupSuffix + 1 ))
 echo $cgroupSuffix > suffix
-cgexec -g cpu,memory:$cgroupName $PWD/$1
+cgexec -g cpu,memory:$cgroupName $PWD/$1 &
+disown
