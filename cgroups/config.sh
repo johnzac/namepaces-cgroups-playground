@@ -1,0 +1,6 @@
+cpuUtilPercentage=10
+cpuSharesOnContentionPercentage=10
+maxRamAllowed=200
+baseSharesValue=1024
+cgroupName="testcgroup"
+defaultCFSPeriod=1000000
