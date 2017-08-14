@@ -8,7 +8,7 @@ fi
 cgroupSuffix=`cat suffix`
 cgroupName=$cgroupName$cgroupSuffix
 cgcreate -g cpu,memory:$cgroupName
-cgset -r memory.limit_in_bytes=${maxRamAllowed}M testscript
+cgset -r memory.limit_in_bytes=${maxRamAllowed}M $cgroupName
 shares=`perl -E "say int($cpuSharesOnContentionPercentage/100*$baseSharesValue)"`
 cgset -r cpu.shares=$shares $cgroupName
 cfsQuota=`perl -E "say int($cpuUtilPercentage/100*$defaultCFSPeriod)"`
